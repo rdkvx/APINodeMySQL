@@ -2,7 +2,7 @@ const models = require('../db/models');
 
 exports.index = async ()=>{
     const resultado = await models.usuario.findAll({
-        include: ['aluno']
+        include: ['aluno', 'professor', 'questao']
     });
     return resultado;
 }
@@ -14,7 +14,7 @@ exports.show = async (id)=>{
 
 exports.store = async (usuario)=>{
     const resultado = await models.usuario.create(usuario,{
-        include : ['aluno','questoes']
+        include : ['aluno','professor','questoes']
     });
     return resultado;
 }

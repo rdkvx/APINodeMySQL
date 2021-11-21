@@ -2,7 +2,7 @@ const models = require('../db/models');
 
 exports.index = async ()=>{
     const resultado = await models.turma.findAll({
-        include: ['disciplina', 'professores']
+        include: ['disciplina', 'professores', 'cursos']
     });
     return resultado;
 }
@@ -14,7 +14,7 @@ exports.show = async (id)=>{
 
 exports.store = async (turma)=>{
     const resultado = await models.turma.create(turma,{
-        include: ['disciplina', 'professores']
+        include: ['disciplina', 'professores', 'cursos']
     });
     return resultado;
 }
