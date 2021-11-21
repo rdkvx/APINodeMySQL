@@ -3,6 +3,7 @@ const questao = require('./questao.routes');
 const hardskill = require('./hardskill.routes');
 const professor = require('./professor.routes');
 const turma = require('./turma.routes');
+const disciplina = require('./disciplina.routes');
 
 module.exports = app => {
     app.use('/api/usuario', usuario);
@@ -10,4 +11,5 @@ module.exports = app => {
     app.use('/api/hardskill', hardskill);
     app.use('/api/professor',professor);
     app.use('/api/turma', turma);
+    app.use('/api/disciplina', disciplina);
 }
