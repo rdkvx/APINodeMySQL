@@ -23,6 +23,14 @@ const Turma = sequelize.define(name,{
 
 Turma.associate = models =>{
 
+    Turma.belongsTo(models.disciplina,{
+        timestamps: false,
+        foreignKey: {
+            name: 'id_disciplina'
+        },
+        as: 'disciplina'
+    })  
+
     Turma.belongsToMany(models.professor,{
         through: 'professor_turma',
         timestamps: false,

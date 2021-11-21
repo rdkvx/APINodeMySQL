@@ -12,8 +12,6 @@ const Professor = sequelize.define(name,{
     timestamps:false
 });
 
-
-
 Professor.associate = (models) =>{
     Professor.belongsTo(models.usuario,{
         foreignKey: {

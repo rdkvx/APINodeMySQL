@@ -2,7 +2,7 @@ const models = require('../db/models');
 
 exports.index = async ()=>{
     const resultado = await models.disciplina.findAll({
-        include: ['professores']
+        include: ['professores','turmas']
     });
     return resultado;
 }
@@ -14,7 +14,7 @@ exports.show = async (id)=>{
 
 exports.store = async (disciplina)=>{
     const resultado = await models.disciplina.create(disciplina,{
-        include : ['professores']
+        include : ['professores', 'turmas']
     });
     return resultado;
 }

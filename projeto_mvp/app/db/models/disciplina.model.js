@@ -15,12 +15,12 @@ const Disciplina = sequelize.define(name,{
 
 
 Disciplina.associate = (models) =>{
-    /*Disciplina.belongsTo(models.turma,{
+    Disciplina.hasMany(models.turma,{
         foreignKey: {
             name: 'id_disciplina'
         },
         as: 'turmas'
-    });*/
+    });
 
     Disciplina.belongsToMany(models.professor,{
         through: 'disciplina_professor',
