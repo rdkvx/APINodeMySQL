@@ -21,6 +21,15 @@ Professor.associate = (models) =>{
         },
         as: 'usuario'
     });
+
+    Professor.belongsToMany(models.turma,{
+        through: 'professor_turma',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_professor'
+        },
+        as: 'turmas'
+    })  
 }
 
 module.exports = Professor;

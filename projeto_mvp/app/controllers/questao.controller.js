@@ -13,7 +13,9 @@ exports.show = async (id)=>{
 }
 
 exports.store = async (questao)=>{
-    const resultado = await models.questao.create(questao);
+    const resultado = await models.questao.create(questao,{
+        include: ['usuario']
+    });
     return resultado;
 }
 

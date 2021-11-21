@@ -14,7 +14,7 @@ exports.show = async (id)=>{
 
 exports.store = async (professor)=>{
     const resultado = await models.professor.create(professor,{
-        include : ['usuario']
+        include : ['usuario', 'turmas']
     });
     return resultado;
 }
